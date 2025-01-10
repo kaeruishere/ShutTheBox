@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Shut The Box</string>
+    <string name="default_web_client_id">8986403998-pmpr83ol9mnneqie7k3ilgni6rg8i78v.apps.googleusercontent.com</string>
+
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Oyna</string>
+    <string name="title_dashboard">Liderlik Tablosu</string>
+    <string name="confirm_password">Şifreni Doğrula</string>
+    <string name="sign_up">Kaydol</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="already_have_an_account_sign_in">Zaten hesabın var mı? buradan giriş yapabilirsin</string>
+    <string name="password">Şifre</string>
+    <string name="sign_in">Giriş yap</string>
+    <string name="don_t_have_an_account_sign_up">Hesabın yok mu ? Kayıt ol</string>
+    <string name="e_mail">E-mail</string>
+    <string name="lose_info">Gelen zarların toplamı kalan sayılarla elde edilemedi...</string>
+    <string name="play_info">Çıkarmak İstediğiniz Sayı/Sayılara Dokunun</string>
+
+
+</resources>
