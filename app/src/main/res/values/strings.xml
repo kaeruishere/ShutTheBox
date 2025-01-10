@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Shut The Box</string>
-    <string name="default_web_client_id">8986403998-pmpr83ol9mnneqie7k3ilgni6rg8i78v.apps.googleusercontent.com</string>
-
-
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Oyna</string>
     <string name="title_dashboard">Liderlik Tablosu</string>
