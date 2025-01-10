@@ -34,11 +34,9 @@ public class SplashActivity extends AppCompatActivity {
 
         videoView.setOnCompletionListener(mp -> {
             if (mAuth.getCurrentUser() != null) {
-                // User is logged in, check if the username is set
                 String userId = mAuth.getCurrentUser().getUid();
                 checkUserUsername(userId);
             } else {
-                // No user logged in, navigate to LoginActivity
                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -52,26 +50,21 @@ public class SplashActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
-                            // Check if the username field exists
                             if (document.contains("username") && document.getString("username") != null) {
-                                // Username is set, navigate to MainActivity
                                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {
-                                // Username is not set, navigate to LoginActivity
                                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
                         } else {
-                            // User does not exist in Firestore, navigate to LoginActivity
                             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         }
                     } else {
-                        // Error while fetching user data, navigate to LoginActivity
                         Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
