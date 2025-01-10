@@ -41,8 +41,8 @@ public class LoginActivity extends AppCompatActivity {
     private LinearLayout registerLayout, signInLayout , GLayout;
     private TextView rToS, sToR;
 
-    private EditText gUsernameEditText;  // Google Username EditText
-    private Button gUsernameSaveButton;  // Google Username Save Button
+    private EditText gUsernameEditText;
+    private Button gUsernameSaveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
-                    // Kullanıcı başarıyla giriş yaptı
+                    
                     Toast.makeText(LoginActivity.this, "Sign-In Successful", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -192,18 +192,18 @@ public class LoginActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
-                    // Check if the username is already saved
+                   
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     db.collection("users").document(user.getUid()).get()
                             .addOnCompleteListener(documentTask -> {
                                 if (documentTask.isSuccessful()) {
                                     if (documentTask.getResult().exists()) {
-                                        // User data exists, proceed to MainActivity
+                                       
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
                                         finish();
                                     } else {
-                                        // Prompt for a username
+                                      
                                         GLayout.setVisibility(View.VISIBLE);
                                         btnGoogleSignIn.setVisibility(View.GONE);
                                         registerLayout.setVisibility(View.GONE);
@@ -228,7 +228,7 @@ public class LoginActivity extends AppCompatActivity {
 
         db.collection("users").document(userId).set(user)
                 .addOnSuccessListener(aVoid -> {
-                    // After saving, proceed to MainActivity
+                  
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
